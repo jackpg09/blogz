@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Jack's Blogger App</title>
+        <style type="text/css">
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+<body>
+    <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="http://127.0.0.1:5000/blog">Main Blog Page</a>
+                    </td>
+                    <td>
+                        <a href="http://127.0.0.1:5000/newpost">Post Something</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Posted Blogs</h1>
+{% for blog in blogs %}
+    <form method="POST" action="/delete">
+    <table border="1px">
+        <tbody>
+            <tr>
+                <td>
+                    <label>
+                        Title:
+                        <p><a href="/blog?id={{blog.id}}">{{ blog.title }}</a></p>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Thoughts:
+                        <p>{{ blog.text }}</p>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="blog-id" value="{{ blog.id }}" />
+                    <input type="submit" value="Remove" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+{% endfor %}
+
+{% endblock %}
