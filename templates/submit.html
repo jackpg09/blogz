@@ -8,26 +8,25 @@
             <tbody>
                 <tr>
                     <td>
-                        <label>
-                            Title:
-                            <input type="text" name="title" />
-                        </label>
+                        <label>Title:</label>
+                        <input type="text" name="title" />
                         <span class="error">{{error1}}</span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>
-                            Thoughts:
-                            <input style="width:100px; height:40px;" type="text" name="text" />
-                        </label>
+                        <label>Thoughts:</label>
+                        <textarea name="text"></textarea>
                         <span class="error">{{error2}}</span>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Post" />
+                    </td>
+                </tr>
             </tbody>
-            <input type="submit" value="Post" />
         </table>
     </form>
 
 {% endblock %}
-

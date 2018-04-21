@@ -1,29 +1,52 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Jack's Blogger App</title>
-        <style type="text/css">
-            .error {
-                color: red;
-            }
-        </style>
-    </head>
+<head>
+    <title>Jack's Blogger App</title>
+    <style type="text/css">
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
 <body>
-    <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="http://127.0.0.1:5000/blog">Main Blog Page</a>
-                    </td>
-                    <td>
-                        <a href="http://127.0.0.1:5000/newpost">Post Something</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <nav>
+        <ul>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+        </ul> 
+        <ul>
+            <li>
+                <a href="http://127.0.0.1:5000/">Home</a>
+            </li>
+            <li>
+                <a href="http://127.0.0.1:5000/blog">All Blogs</a>
+            </li>
+            <li>
+                <a href="http://127.0.0.1:5000/newpost">New Post</a>
+            </li>
+        </ul>      
+    </nav>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            <ul>
+            {% for category,message in messages %}
+                <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+            </ul>
+        {% endwith %}
 
     {% block content %}
     {% endblock %}
 
 </body>
 </html>
+
+
+
+                   
